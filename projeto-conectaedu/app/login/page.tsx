@@ -55,7 +55,7 @@ export default function PaginaLoginSimples() {
             </button>
           </div>
           <div className="flex flex-col items-center space-y-1 pt-4 text-xs text-gray-600">
-            <a href="#" className="hover:underline">
+            <a href="/RedefinirSenha" className="hover:underline">
               Esqueci minha senha
             </a>
             <a href="#" className="hover:underline">
