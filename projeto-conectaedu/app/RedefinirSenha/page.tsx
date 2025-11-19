@@ -1,99 +1,56 @@
-// app/redefinir-senha/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Componente para a tela de Redefinição de Senha
 export default function PaginaRedefinirSenha() {
-  
-  // O componente de seta de retorno será encapsulado em um Link para navegar para a tela de login
-  const VoltarParaLogin = () => (
-    <Link 
-      href="/login" 
-      className="absolute top-8 left-8 text-white z-20 text-3xl cursor-pointer"
-      aria-label="Voltar para a página de login"
-    >
-      ← {/* Seta de retorno estilizada */}
-    </Link>
-  );
-
   return (
-    // Fundo azul, usando a cor conecta-blue-bg do tailwind.config.js, e layout flex para centralizar
-    <main className="flex min-h-screen items-center justify-center bg-conecta-blue-bg relative overflow-hidden p-4">
-      
-      {/* Simulação do padrão de fundo ondulado abstrato (fundo azul claro na imagem)
-        Replicando a estilização de fundo que foi vista em 'app/page.tsx' para consistência.
-      */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        {/* Onda 1 (Superior esquerda) */}
-        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-white/10 rounded-full blur-3xl transform rotate-45 scale-150"></div>
-        {/* Onda 2 (Central direita) */}
-        <div className="absolute top-1/2 right-0 w-2/3 h-2/3 bg-white/5 rounded-full blur-3xl transform -translate-y-1/2 translate-x-1/2 rotate-12 scale-150"></div>
-        {/* Onda 3 (Inferior esquerda) */}
-        <div className="absolute bottom-0 left-0 w-2/5 h-2/5 bg-white/10 rounded-full blur-3xl transform translate-y-1/2 -translate-x-1/2 -rotate-24 scale-150"></div>
-      </div>
-
-      {/* Seta de retorno */}
-      <VoltarParaLogin />
-
-      {/* Card de Redefinição de Senha (z-index 10 para ficar acima do fundo) */}
-      {/* Estilo:
-        - max-w-4xl (largura máxima, para parecer grande como no print)
-        - min-h-[400px] (altura mínima para acomodar o conteúdo)
-        - bg-conecta-purple (cor de fundo)
-        - rounded-4xl (borda arredondada)
-      */}
-      <div className="z-10 w-full max-w-4xl min-h-[400px] bg-conecta-purple rounded-4xl p-10 shadow-2xl flex items-center justify-between relative">
-        
-        {/* Coluna da esquerda (Título, Ícone e Formulário) */}
-        <div className="flex flex-col justify-center w-full md:w-1/2 space-y-6">
-          <h1 className="text-4xl font-bold text-white uppercase">
-            REDEFINIR SENHA
-          </h1>
-          <p className="text-6xl text-white">
-            🔑 {/* Simulação do ícone de chave */}
-          </p>
-          
-          <form className="space-y-4 pt-4">
-            <p className="text-white text-base">
-              INFORME O EMAIL PARA QUAL DESEJA REDEFINIR A SUA SENHA
-            </p>
-            
-            {/* Campo de input para o email */}
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+      <div className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md">
+        <div className="mb-6 flex justify-center">
+          <Image
+            src="/images/logoconectaedureso.png"
+            alt="Logo ConectaEDU"
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
+        </div>
+        <h2 className="mb-2 text-center text-2xl font-bold text-gray-900">
+          Redefinir Senha
+        </h2>
+        <p className="mb-6 text-center text-sm text-gray-600">
+          Informe o e-mail associado à sua conta para receber as instruções de recuperação.
+        </p>
+        <form className="space-y-6">
+          <div>
+            <label 
+              htmlFor="email" 
+              className="block text-sm font-medium text-gray-700"
+            >
+              Email
+            </label>
             <input
               id="email"
               name="email"
               type="email"
               required
-              className="mt-1 block w-full rounded-2xl border-none px-6 py-4 shadow-sm focus:ring-2 focus:ring-white focus:outline-none text-lg text-gray-900"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
               placeholder="seu@email.com"
             />
-            
-            {/* Botão de Redefinir Senha */}
+          </div>
+          <div>
             <button
               type="submit"
-              // Usando conecta-teal (verde-água) para o botão, como no print
-              className="flex w-full justify-center rounded-2xl border border-transparent bg-conecta-teal px-6 py-4 text-xl font-semibold text-white shadow-lg hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 transition duration-150 ease-in-out uppercase"
+              className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
             >
-              REDEFINIR SENHA
+              Enviar Instruções
             </button>
-          </form>
-        </div>
-
-        {/* Coluna da direita (Logo da ConectaEDU) - Visível em telas maiores */}
-        <div className="hidden md:flex justify-center items-center w-1/2">
-            <div className="relative w-64 h-64">
-                <div className="rounded-full bg-white p-4 shadow-lg absolute inset-0 flex items-center justify-center">
-                    <Image
-                        src="/images/logo-conectaedu.jpg"
-                        alt="Logo ConectaEDU"
-                        layout="fill"
-                        objectFit="contain"
-                        className="rounded-full" 
-                    />
-                </div>
-            </div>
-        </div>
-
+          </div>
+          <div className="flex justify-center pt-2 text-sm">
+            <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500 hover:underline">
+              ← Voltar para o Login
+            </Link>
+          </div>
+        </form>
       </div>
     </main>
   );

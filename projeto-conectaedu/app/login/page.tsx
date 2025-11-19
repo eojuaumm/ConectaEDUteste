@@ -1,8 +1,21 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'ConectaEDU - Login',
+  description: 'Entre na sua conta ConectaEDU',
+};
 export default function PaginaLoginSimples() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100 relative">
+      <Link 
+        href="/" 
+        className="absolute top-8 left-8 text-gray-600 hover:text-blue-600 transition-colors text-2xl flex items-center gap-2 font-medium"
+        aria-label="Voltar para a página inicial"
+      >
+        <span>←</span> <span className="text-base">Voltar</span>
+      </Link>
       <div className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md">
         <div className="mb-6 flex justify-center">
           <Image
@@ -58,11 +71,13 @@ export default function PaginaLoginSimples() {
             <a href="/RedefinirSenha" className="hover:underline">
               Esqueci minha senha
             </a>
-            <a href="#" className="hover:underline">
-              Não possuo cadastro
-            </a>
+            <div className="flex gap-1">
+              <span>Não possuo cadastro?</span>
+              <a href="/cadastro" className="text-blue-600 hover:underline font-semibold">
+                Criar conta
+              </a>
+            </div>
           </div>
-
         </form>
       </div>
     </main>

@@ -1,15 +1,45 @@
-import RoleSelectionCard from './components/RoleSelectionCard';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'ConectaEDU',
+  description: 'Selecione sua função para continuar',
+};
 export default function PaginaSelecaoFuncao() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-blue-500 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-700/30 rounded-full blur-3xl transform rotate-45 scale-150"></div>
-        <div className="absolute top-1/2 right-0 w-2/3 h-2/3 bg-blue-600/20 rounded-full blur-3xl transform -translate-y-1/2 translate-x-1/2 rotate-12 scale-150"></div>
-        <div className="absolute bottom-0 left-0 w-2/5 h-2/5 bg-blue-700/40 rounded-full blur-3xl transform translate-y-1/2 -translate-x-1/2 -rotate-24 scale-150"></div>
-      </div>
-      <div className="z-10">
-        <RoleSelectionCard />
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100">
+      <div className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md">
+        <div className="mb-6 flex justify-center">
+          <Image
+            src="/images/logoconectaedureso.png"
+            alt="Logo ConectaEDU"
+            width={100}
+            height={100}
+            className="rounded-full"
+          />
+        </div>
+        <h1 className="mb-8 text-center text-2xl font-bold text-gray-900">
+          Qual é a sua função?
+        </h1>
+        <div className="space-y-4">
+          <Link href="/professor/dashboard" className="block w-full">
+            <button
+              type="button"
+              className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+            >
+              Professor
+            </button>
+          </Link>
+          <Link href="/login" className="block w-full">
+             <button
+              type="button"
+              className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
+            >
+              Pai ou responsável
+            </button>
+          </Link>
+        </div>
       </div>
     </main>
   );
