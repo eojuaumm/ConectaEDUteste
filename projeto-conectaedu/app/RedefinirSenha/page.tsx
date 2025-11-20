@@ -1,6 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'ConectaEDU - Redefinição',
+  description: 'Redefina sua senha ConectaEDU',
+};
 export default function PaginaRedefinirSenha() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100">

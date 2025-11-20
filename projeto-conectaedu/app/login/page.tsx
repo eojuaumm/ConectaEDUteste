@@ -19,7 +19,7 @@ export default function PaginaLoginSimples() {
       <div className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md">
         <div className="mb-6 flex justify-center">
           <Image
-            src="/images/logo-conectaedu.jpg"
+            src="/images/logoconectaedureso.png"
             alt="Logo ConectaEDU"
             width={100}
             height={100}

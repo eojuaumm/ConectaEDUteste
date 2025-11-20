@@ -23,7 +23,7 @@ export default function PaginaSelecaoFuncao() {
           Qual é a sua função?
         </h1>
         <div className="space-y-4">
-          <Link href="/professor/dashboard" className="block w-full">
+          <Link href="/professor/login" className="block w-full">
             <button
               type="button"
               className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-150 ease-in-out"
