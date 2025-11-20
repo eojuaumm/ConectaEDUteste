@@ -1,11 +1,9 @@
+'use client'; 
 
-
-'use client'; // 1. Torna o componente interativo para usar o histórico
-
-import { useRouter } from 'next/navigation'; // Importamos o hook de navegação
+import { useRouter } from 'next/navigation'; 
 
 export default function NotFound() {
-  const router = useRouter(); // Inicializamos o router
+  const router = useRouter();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-white p-6 text-center">
@@ -18,8 +16,6 @@ export default function NotFound() {
       <p className="mt-2 text-lg text-gray-600">
         Oops! Parece que a página que você está procurando não existe mais ou foi movida.
       </p>
-      
-      {/* Botão com ação de voltar */}
       <button
         type="button"
         onClick={() => router.back()} // Ação mágica para voltar à página anterior
