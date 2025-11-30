@@ -34,7 +34,7 @@ const criadores = [
   },
   {
     nome: 'Isabele',
-    funcao: '{função}',
+    funcao: 'UI/UX Designer',
     descricao: 'descrição',
     imagem: '/images/logoconectaedureso.png'
   },
