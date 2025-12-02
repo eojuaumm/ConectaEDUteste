@@ -21,12 +21,10 @@ import {
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-// --- Utilitários ---
 function cn(...inputs: (string | undefined | null | Record<string, boolean>)[]): string {
   return twMerge(clsx(inputs));
 }
 
-// --- Tipos de Dados ---
 interface Grade {
   subject: string;
   b1: number | null;
@@ -37,7 +35,6 @@ interface Grade {
   status: 'Aprovado' | 'Recuperação' | 'Cursando';
 }
 
-// --- Dados Mockados ---
 const studentData = {
   name: "João Silva",
   class: "9º Ano A",
@@ -68,7 +65,6 @@ export default function BoletimPage() {
   return (
     <div className="min-h-screen bg-gray-50 relative font-sans text-gray-900">
       
-      {/* --- Header --- */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -104,7 +100,6 @@ export default function BoletimPage() {
         </div>
       </header>
 
-      {/* --- Overlay Menu Mobile --- */}
       <div 
         className={cn(
           "fixed inset-0 bg-black/50 z-40 transition-opacity duration-300",
@@ -113,7 +108,6 @@ export default function BoletimPage() {
         onClick={() => setMenuAberto(false)}
       />
 
-      {/* --- Sidebar (Igual ao Professor, mas Azul) --- */}
       <aside 
         className={cn(
           "fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col",
@@ -121,7 +115,6 @@ export default function BoletimPage() {
         )}
       >
         <div className="p-6 flex flex-col h-full">
-          {/* Barra de Pesquisa no Menu */}
           <div className="flex items-center gap-3 mb-8">
             <div className="relative flex-1">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -137,7 +130,6 @@ export default function BoletimPage() {
               onClick={() => setMenuAberto(false)}
               className="p-2 text-gray-600 hover:text-blue-700 transition-colors"
             >
-               {/* Ícone de fechar estilo seta para trás */}
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" className="transform rotate-180"/> 
               </svg>
@@ -168,14 +160,12 @@ export default function BoletimPage() {
               <span className="font-medium">Horários</span>
             </Link>
 
-            {/* Link Ativo (Boletim) */}
             <Link href="/boletim" className="flex items-center gap-4 px-2 py-2 text-blue-700 bg-blue-50 rounded-md transition-colors group">
               <FileText className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Boletim</span>
             </Link>
           </nav>
 
-          {/* Rodapé do Menu */}
           <div className="mt-auto space-y-4">
             <Link href="/" className="flex items-center gap-4 px-2 py-2 text-gray-800 hover:text-red-600 transition-colors font-bold uppercase tracking-wide">
               <LogOut className="w-6 h-6 transform rotate-180" />
@@ -192,10 +182,8 @@ export default function BoletimPage() {
         </div>
       </aside>
 
-      {/* --- Conteúdo Principal --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        {/* Cabeçalho do Conteúdo */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-blue-700">Boletim Escolar</h1>
@@ -213,7 +201,6 @@ export default function BoletimPage() {
           </div>
         </div>
 
-        {/* Cards de Resumo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
              <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 text-white shadow-lg shadow-blue-200">
                 <div className="flex items-center gap-3 mb-2">
@@ -241,7 +228,6 @@ export default function BoletimPage() {
              </div>
         </div>
 
-        {/* Tabela de Notas (Desktop) */}
         <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -291,7 +277,6 @@ export default function BoletimPage() {
             </div>
         </motion.div>
 
-        {/* Cards de Notas (Mobile) */}
         <div className="md:hidden space-y-4">
             {initialGrades.map((item, index) => (
                  <motion.div 
