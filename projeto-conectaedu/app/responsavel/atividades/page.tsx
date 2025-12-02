@@ -11,7 +11,7 @@ const COLOR_WAVE_BACKGROUND = '#4A2E70';
 const COLOR_BOTTOM_BORDER = '#49B5E7';  
 
 const navItemsAluno = [
-    // Atividades agora é a tela principal
+
     { title: 'Atividades', href: '/responsavel/atividades', iconPath: "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z", active: true },
     { title: 'Mural de avisos', href: '/responsavel/muraldeavisos', iconPath: "M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" },
     { title: 'Horários', href: '/responsavel/horarios', iconPath: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
