@@ -68,12 +68,12 @@ export default function PaginaLoginSimples() {
             </button>
           </div>
           <div className="flex flex-col items-center space-y-1 pt-4 text-xs text-gray-600">
-            <a href="/RedefinirSenha" className="hover:underline">
+            <a href="/responsavel/RedefinirSenha" className="hover:underline">
               Esqueci minha senha
             </a>
             <div className="flex gap-1">
               <span>Não possuo cadastro?</span>
-              <a href="/cadastro" className="text-blue-600 hover:underline font-semibold">
+              <a href="/responsavel/cadastro" className="text-blue-600 hover:underline font-semibold">
                 Criar conta
               </a>
             </div>

@@ -98,7 +98,7 @@ export default function TelaCadastro() {
           </div>
           <div className="flex flex-col items-center space-y-1 pt-4 text-xs text-gray-600">
             <span className="text-gray-500">Já possui uma conta?</span>
-            <Link href="/login" className="text-blue-600 hover:underline font-medium">
+            <Link href="/responsavel/login" className="text-blue-600 hover:underline font-medium">
               Fazer Login
             </Link>
           </div>
