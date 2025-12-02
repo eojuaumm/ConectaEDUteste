@@ -14,7 +14,7 @@ export default function PaginaLoginSimples() {
         className="absolute top-8 left-8 text-gray-600 hover:text-blue-600 transition-colors text-2xl flex items-center gap-2 font-medium"
         aria-label="Voltar para a página inicial"
       >
-        <span>←</span> <span className="text-base">Voltar</span>
+        <span></span> <span className="text-base">Voltar</span>
       </Link>
       <div className="w-full max-w-sm rounded-lg bg-white p-8 shadow-md">
         <div className="mb-6 flex justify-center">

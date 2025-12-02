@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 export default function LoginProfessor() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50 relative">
-      {/* Botão de Voltar */}
       <Link 
         href="/" 
         className="absolute top-8 left-8 text-gray-600 hover:text-conecta-purple transition-colors text-xl flex items-center gap-2 font-medium"
@@ -94,7 +93,7 @@ export default function LoginProfessor() {
           <div>
              <Link href="/professor/dashboard" className="w-full block">
              <button
-             type="button" // Mudei para button para evitar submit de form sem backend
+             type="button"
              className="flex w-full justify-center rounded-md bg-[#5B3A9A] px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-[#4a2e7d] focus:outline-none focus:ring-2 focus:ring-[#5B3A9A] focus:ring-offset-2 transition duration-150 ease-in-out"
              >
              Entrar no Portal
