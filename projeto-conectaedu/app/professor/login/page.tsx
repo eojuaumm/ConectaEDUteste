@@ -15,7 +15,7 @@ export default function LoginProfessor() {
         className="absolute top-8 left-8 text-gray-600 hover:text-conecta-purple transition-colors text-xl flex items-center gap-2 font-medium"
         aria-label="Voltar para a página inicial"
       >
-        <span>←</span> <span className="text-sm">Voltar</span>
+        <span></span> <span className="text-sm">Voltar</span>
       </Link>
 
       <div className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg border-t-4 border-conecta-purple">

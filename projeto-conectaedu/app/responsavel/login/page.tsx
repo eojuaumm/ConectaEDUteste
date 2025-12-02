@@ -60,12 +60,14 @@ export default function PaginaLoginSimples() {
             />
           </div>
           <div>
+            <Link href="/responsavel/atividades" className="w-full block">
             <button
-              type="submit"
+              type="button"
               className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Entrar
             </button>
+            </Link>
           </div>
           <div className="flex flex-col items-center space-y-1 pt-4 text-xs text-gray-600">
             <a href="/responsavel/RedefinirSenha" className="hover:underline">
