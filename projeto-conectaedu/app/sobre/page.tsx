@@ -143,14 +143,6 @@ export default function TelaSobre() {
                 <span className="inline-block px-3 py-1 mt-2 text-xs font-medium text-[#5B3A9A] bg-purple-50 rounded-full border border-purple-100">
                     {criador.funcao}
                 </span>
-                <p className="mt-4 text-gray-600 text-sm leading-relaxed h-20 overflow-hidden">
-                    {criador.descricao}
-                </p>
-
-                <div className="flex justify-center gap-4 mt-6 opacity-60">
-                    <div className="w-8 h-8 bg-gray-200 rounded-full hover:bg-[#5B3A9A] hover:text-white transition-colors flex items-center justify-center cursor-pointer">in</div>
-                    <div className="w-8 h-8 bg-gray-200 rounded-full hover:bg-[#5B3A9A] hover:text-white transition-colors flex items-center justify-center cursor-pointer">GitHub</div>
-                </div>
               </div>
             </div>
           ))}

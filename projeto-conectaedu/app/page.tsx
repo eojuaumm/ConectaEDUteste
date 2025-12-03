@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Info } from 'lucide-react'; // Opcional: Adicionando um ícone para ficar bonito
+import { Info } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'ConectaEDU',
@@ -13,7 +13,6 @@ export default function PaginaSelecaoFuncao() {
     <main className="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-sm rounded-xl bg-white p-8 shadow-lg">
         
-        {/* Logo e Título */}
         <div className="mb-8 flex flex-col items-center">
           <div className="relative h-24 w-24 mb-4">
              <Image
@@ -32,9 +31,7 @@ export default function PaginaSelecaoFuncao() {
           </p>
         </div>
 
-        {/* Botões de Ação */}
         <div className="space-y-3">
-          {/* Botão Professor */}
           <Link href="/professor/login" className="block w-full">
             <button
               type="button"
@@ -44,7 +41,6 @@ export default function PaginaSelecaoFuncao() {
             </button>
           </Link>
 
-          {/* Botão Responsável */}
           <Link href="/responsavel/login" className="block w-full">
              <button
               type="button"
@@ -54,7 +50,6 @@ export default function PaginaSelecaoFuncao() {
             </button>
           </Link>
 
-          {/* Separador Sutil (Opcional, mas ajuda no design) */}
           <div className="relative py-2">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-200"></div>
@@ -64,13 +59,11 @@ export default function PaginaSelecaoFuncao() {
             </div>
           </div>
 
-          {/* Botão Sobre (Estilo Secundário) */}
           <Link href="/sobre" className="block w-full">
              <button
               type="button"
               className="group flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200"
             >
-              {/* Ícone SVG simples caso não queira usar lucide-react aqui */}
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 group-hover:text-blue-600 transition-colors"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
               Sobre o Projeto
             </button>
@@ -79,9 +72,8 @@ export default function PaginaSelecaoFuncao() {
 
       </div>
       
-      {/* Rodapé simples */}
       <p className="mt-8 text-center text-xs text-gray-400">
-        © 2024 ConectaEDU. Todos os direitos reservados.
+        © 2025 ConectaEDU. Todos os direitos reservados.
       </p>
     </main>
   );
