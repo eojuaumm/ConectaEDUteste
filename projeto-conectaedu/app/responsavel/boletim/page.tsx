@@ -138,29 +138,28 @@ export default function BoletimPage() {
 
           <hr className="border-gray-200 mb-6" />
 
-          {/* Links de Navegação */}
           <nav className="space-y-4 flex-1">
             <Link href="/" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
               <LayoutDashboard className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Início</span>
             </Link>
 
-            <Link href="#" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
+            <Link href="/responsavel/atividades" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
               <BookOpen className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Atividades</span>
             </Link>
 
-            <Link href="/muraldeavisos" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
+            <Link href="/responsavel/muraldeavisos" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
               <Calendar className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Mural de Avisos</span>
             </Link>
 
-            <Link href="#" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
+            <Link href="/responsavel/horarios" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-blue-700 transition-colors group">
               <Clock className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Horários</span>
             </Link>
 
-            <Link href="/boletim" className="flex items-center gap-4 px-2 py-2 text-blue-700 bg-blue-50 rounded-md transition-colors group">
+            <Link href="/responsavel/boletim" className="flex items-center gap-4 px-2 py-2 text-blue-700 bg-blue-50 rounded-md transition-colors group">
               <FileText className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Boletim</span>
             </Link>

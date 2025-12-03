@@ -8,7 +8,6 @@ import { Calendar, MapPin, User, Search, Plus } from "lucide-react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// --- Tipos e Utilitários ---
 type Category = "Geral" | "Eventos" | "Provas" | "Esportes" | "Urgente";
 
 interface Notice {
@@ -33,7 +32,6 @@ function cn(...inputs: (string | undefined | null | Record<string, boolean>)[]):
   return twMerge(clsx(inputs));
 }
 
-// --- Dados iniciais ---
 const initialNotices: Notice[] = [
   { id: "1", title: "Feira de Ciências 2024", content: "Preparem seus projetos! As inscrições para a feira anual de ciências estão abertas.", date: "2024-05-20", location: "Ginásio", category: "Eventos", author: "Coordenação" },
   { id: "2", title: "Prova de Matemática - 9º Ano", content: "Conteúdo: Álgebra Linear e Funções do Segundo Grau. Estudem com antecedência!", date: "2024-06-15", category: "Provas", author: "Prof. Lúcia" },
@@ -44,7 +42,6 @@ const initialNotices: Notice[] = [
   { id: "11", title: "Vaga de Estágio - Biblioteca", content: "Vaga para alunos do 3º ano. Enviar currículo para a coordenação.", date: "2024-05-22", category: "Geral", author: "RH Escolar" },
 ];
 
-// --- Componente Modal ---
 interface NewNoticeModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -110,12 +107,9 @@ function NewNoticeModal({ isOpen, onClose, onSave }: NewNoticeModalProps) {
   );
 }
 
-// --- Página Principal (Mural no Layout do Professor) ---
 export default function NoticeBoard() {
-  // Estados do Layout
   const [menuAberto, setMenuAberto] = useState(false);
 
-  // Estados do Mural
   const [notices] = useState<Notice[]>(initialNotices);
   const [filter, setFilter] = useState<"Todos" | Category>("Todos");
   const [searchTerm, setSearchTerm] = useState("");
@@ -131,7 +125,6 @@ export default function NoticeBoard() {
 
   return (
     <div className="min-h-screen bg-gray-50 relative">
-      {/* --- Header (Copiado do Modelo do Professor) --- */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -169,7 +162,6 @@ export default function NoticeBoard() {
         </div>
       </header>
 
-      {/* --- Overlay do Menu Mobile --- */}
       <div 
         className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
           menuAberto ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
@@ -177,7 +169,6 @@ export default function NoticeBoard() {
         onClick={() => setMenuAberto(false)}
       />
 
-      {/* --- Sidebar (Copiado e adaptado do Modelo do Professor) --- */}
       <aside 
         className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
           menuAberto ? 'translate-x-0' : '-translate-x-full'
@@ -185,7 +176,6 @@ export default function NoticeBoard() {
       >
         <div className="p-6 flex flex-col h-full">
           <div className="flex items-center gap-3 mb-8">
-             {/* Apenas visual, sem funcionalidade real de busca global no sidebar */}
             <div className="relative flex-1">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-gray-400" />
@@ -216,15 +206,14 @@ export default function NoticeBoard() {
               <span className="font-medium">Atividades</span>
             </Link>
 
-            {/* LINK ATIVO: Mural de Avisos */}
-            <Link href="/muraldeavisos" className="flex items-center gap-4 px-2 py-2 text-[#5B3A9A] bg-purple-50 rounded-md transition-colors group">
+            <Link href="/professor/muraldeavisos" className="flex items-center gap-4 px-2 py-2 text-[#5B3A9A] bg-purple-50 rounded-md transition-colors group">
               <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
               </svg>
               <span className="font-medium">Mural de avisos</span>
             </Link>
 
-            <Link href="#" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
+            <Link href="/professor/horarios" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -238,7 +227,7 @@ export default function NoticeBoard() {
               <span className="font-medium">Turmas</span>
             </Link>
 
-            <Link href="#" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
+            <Link href="/professor/boletim" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
               </svg>
@@ -264,10 +253,8 @@ export default function NoticeBoard() {
         </div>
       </aside>
 
-      {/* --- Conteúdo Principal (Mural) --- */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
-        {/* Cabeçalho do Conteúdo */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-[#5B3A9A]">Mural Escolar</h1>
@@ -282,9 +269,7 @@ export default function NoticeBoard() {
           </button>
         </div>
 
-        {/* Barra de Ferramentas: Filtros e Busca */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-          {/* Filtros */}
           <div className="flex flex-wrap gap-2 w-full md:w-auto">
             {categories.map((c) => (
               <button
@@ -302,7 +287,6 @@ export default function NoticeBoard() {
             ))}
           </div>
 
-          {/* Busca */}
           <div className="relative w-full md:w-72 group">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4 group-focus-within:text-[#5B3A9A] transition-colors" />
             <input
@@ -314,7 +298,6 @@ export default function NoticeBoard() {
           </div>
         </div>
 
-        {/* Grid de Avisos */}
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((n) => (
@@ -370,7 +353,6 @@ export default function NoticeBoard() {
           </div>
         )}
 
-        {/* Modal de Novo Aviso */}
         {isModalOpen && <NewNoticeModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />}
 
       </main>

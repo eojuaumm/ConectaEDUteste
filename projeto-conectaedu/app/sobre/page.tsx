@@ -11,37 +11,37 @@ const criadores = [
   {
     nome: 'Clara',
     funcao: '{função}',
-    descricao: 'descrição',
+    descricao: '',
     imagem: '/images/logoconectaedureso.png' 
   },
   {
     nome: 'Linaldo',
     funcao: 'Programador Front-End',
-    descricao: 'descrição',
+    descricao: '',
     imagem: '/images/logoconectaedureso.png'
   },
   {
     nome: 'Cauan',
     funcao: '{função}',
-    descricao: 'descrição',
+    descricao: '',
     imagem: '/images/logoconectaedureso.png'
   },
   {
     nome: 'João Victor',
     funcao: 'Desenvolvedor FullStack',
-    descricao: 'descrição',
+    descricao: '',
     imagem: '/images/logoconectaedureso.png'
   },
   {
     nome: 'Isabele',
     funcao: 'UI/UX Designer',
-    descricao: 'descrição',
+    descricao: '',
     imagem: '/images/logoconectaedureso.png'
   },
   {
     nome: 'Gustavo',
-    funcao: '{função}',
-    descricao: 'descrição',
+    funcao: 'Programador Front-End',
+    descricao: '',
     imagem: '/images/logoconectaedureso.png'
   },
 ];
@@ -113,7 +113,7 @@ export default function TelaSobre() {
       <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-sm font-bold text-[#40C0B4] tracking-widest uppercase mb-2">Quem faz acontecer</h2>
-          <h3 className="text-3xl font-bold text-[#5B3A9A]">Conheça a Equipa</h3>
+          <h3 className="text-3xl font-bold text-[#5B3A9A]">Conheça a Equipe</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
