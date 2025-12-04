@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { 
   Menu, 
@@ -67,44 +68,49 @@ export default function DetalhesTurmaPage() {
       titulo: "Realizar Chamada", 
       desc: "Registrar faltas e presenças hoje.", 
       icon: ClipboardCheck, 
-      cor: "bg-blue-500", 
+      cor: "bg-blue-500",
+      href: "#"
     },
     { 
       titulo: "Lançar Notas", 
       desc: "Gerenciar avaliações e resultados.", 
       icon: GraduationCap, 
-      cor: "bg-purple-500", 
+      cor: "bg-purple-500",
+      href: "#"
     },
     { 
       titulo: "Lista de Alunos", 
       desc: "Ver dados e fichas dos estudantes.", 
       icon: Users, 
-      cor: "bg-teal-500", 
+      cor: "bg-teal-500",
+      href: "#" 
     },
     { 
       titulo: "Ocorrências", 
       desc: "Registrar comportamento e avisos.", 
       icon: AlertCircle, 
-      cor: "bg-orange-500", 
+      cor: "bg-orange-500",
+      href: `/professor/turma/${turmaIdRaw}/ocorrencias`
     },
     { 
       titulo: "Plano de Aula", 
       desc: "Organizar conteúdo programático.", 
       icon: BookOpen, 
-      cor: "bg-pink-500", 
+      cor: "bg-pink-500",
+      href: "#" 
     },
     { 
       titulo: "Relatórios", 
       desc: "Exportar dados gerais da turma.", 
       icon: FileSpreadsheet, 
-      cor: "bg-slate-500", 
+      cor: "bg-slate-500",
+      href: `/professor/turma/${turmaIdRaw}/relatorios`
     },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 relative font-sans text-gray-900">
       
-      {/* HEADER */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -155,7 +161,7 @@ export default function DetalhesTurmaPage() {
         )}
       >
         <div className="p-6 flex flex-col h-full">
-          <div className="flex items-center gap-3 mb-8">
+           <div className="flex items-center gap-3 mb-8">
             <div className="relative flex-1">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search className="h-5 w-5 text-gray-400" />
@@ -175,36 +181,29 @@ export default function DetalhesTurmaPage() {
               </svg>
             </button>
           </div>
-
           <hr className="border-gray-200 mb-6" />
-          
           <nav className="space-y-4 flex-1">
             <a href="/professor/atividades" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <BookOpen className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Atividades</span>
             </a>
-
             <a href="/professor/muraldeavisos" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <Calendar className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Mural de avisos</span>
             </a>
-
             <a href="/professor/horarios" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <Clock className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Horários</span>
             </a>
-
             <a href="/professor/dashboard" className="flex items-center gap-4 px-2 py-2 text-[#5B3A9A] bg-purple-50 rounded-md transition-colors group">
               <LayoutDashboard className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Turmas</span>
             </a>
-
             <a href="/professor/boletim" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <FileText className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Boletim</span>
             </a>
           </nav>
-
           <div className="mt-auto space-y-4">
             <a href="/" className="flex items-center gap-4 px-2 py-2 text-gray-800 hover:text-red-600 transition-colors font-bold uppercase tracking-wide">
               <LogOut className="w-6 h-6 transform rotate-180" />
@@ -247,13 +246,13 @@ export default function DetalhesTurmaPage() {
         <h2 className="text-xl font-bold text-gray-800 mb-4">Gerenciamento da Turma</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {acoesTurma.map((acao, index) => (
-                <div key={index} className="group cursor-default select-none">
-                    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex items-start gap-4 opacity-90">
-                        <div className={cn("p-3 rounded-lg text-white shadow-md", acao.cor)}>
+                <Link href={acao.href} key={index} className="group cursor-pointer select-none block">
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 h-full flex items-start gap-4 transition-all hover:shadow-md hover:border-[#5B3A9A]/30">
+                        <div className={cn("p-3 rounded-lg text-white shadow-md group-hover:scale-105 transition-transform", acao.cor)}>
                             <acao.icon className="w-6 h-6" />
                         </div>
                         <div>
-                            <h3 className="text-lg font-bold text-gray-800">
+                            <h3 className="text-lg font-bold text-gray-800 group-hover:text-[#5B3A9A] transition-colors">
                                 {acao.titulo}
                             </h3>
                             <p className="text-sm text-gray-500 mt-1">
@@ -261,12 +260,12 @@ export default function DetalhesTurmaPage() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                 <h3 className="font-bold text-gray-800 mb-4 flex items-center gap-2">
                     <Clock className="w-5 h-5 text-[#40C0B4]" />
                     Próxima Aula

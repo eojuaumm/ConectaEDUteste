@@ -185,7 +185,7 @@ export default function BoletimPage() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-blue-700">Boletim Escolar</h1>
+            <h1 className="text-3xl font-bold text-blue-700">Bolet im Escolar</h1>
             <p className="text-gray-500 mt-1">Acompanhe seu desempenho acadêmico.</p>
           </div>
           
