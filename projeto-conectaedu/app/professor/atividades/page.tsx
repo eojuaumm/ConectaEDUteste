@@ -4,10 +4,10 @@ import React, { useState, useCallback } from 'react';
 import Image from 'next/image'; 
 import Link from 'next/link'; 
 
-// 🚨 SIMULAÇÃO DE UTILS: cn (deve ser importado de 'clsx' ou 'tailwind-merge')
+
 const cn = (...classes: (string | boolean | undefined | null)[]) => classes.filter(Boolean).join(' ');
 
-// 🚨 SIMULAÇÃO DE COMPONENTES DE ICONES (Refletindo o estilo de contorno/outline)
+
 const IconBase = (props: any, paths: string[]) => (
   <svg 
     {...props} 
@@ -26,18 +26,16 @@ const Menu = (props: any) => IconBase(props, ["M4 6h16M4 12h16M4 18h16"]);
 const User = (props: any) => IconBase(props, ["M16 7a4 4 0 11-8 0 4 4 0 018 0z", "M12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"]);
 const Search = (props: any) => IconBase(props, ["M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"]);
 const BookOpen = (props: any) => IconBase(props, ["M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"]); 
-const Calendar = (props: any) => IconBase(props, ["M3 9a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V9z", "M17 4v2", "M7 4v2", "M3 10h18"]); 
+const Calendar = (props: any) => IconBase(props, ["M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"]); 
 const Clock = (props: any) => IconBase(props, ["M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"]); 
-const Users = (props: any) => IconBase(props, ["M17 17h-2", "M15 15l-1-1", "M17 19h-2", "M17 10h-2", "M19 12h-2", "M19 14h-2", "M5 12h2", "M7 14h2", "M5 16h2", "M7 18h2", "M12 2a10 10 0 100 20 10 10 0 000-20z"]); 
+const Users = (props: any) => IconBase(props, ["M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"]); 
 const FileText = (props: any) => IconBase(props, ["M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z", "M14 2v6h6", "M10 13h4", "M10 17h4", "M10 9h-2"]); 
 const LogOut = (props: any) => IconBase(props, ["M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"]);
 const Phone = (props: any) => IconBase(props, ["M3 5a2 2 0 012-2h3.5l1.8 3.6a1 1 0 01-.2 1l-2.7 2.7a12 12 0 008 8l2.7-2.7a1 1 0 011-.2l3.6 1.8V19a2 2 0 01-2 2h-4a14 14 0 01-14-14V5z"]);
 
-// 🎨 CORES E CONSTANTES (Mantidas)
 const PRIMARY_COLOR = '#5B3A9A'; 
 const TEXT_DARK = '#1F2937';
 
-// ⚙️ Estrutura de Dados (Mantida)
 interface Activity {
   id: string;
   title: string;
@@ -52,7 +50,6 @@ const initialActivities: Activity[] = [
   { id: 'a3', title: 'Trabalho: Revolução Industrial', subject: 'História', description: 'Trabalho em grupo sobre a Segunda Revolução Industrial. Critérios de avaliação detalhados no anexo.', dueDate: '2025-12-20' },
 ];
 
-// 📋 Componente de Modal para Adicionar/Editar Atividade (Omitido por brevidade, pois não foi alterado)
 const ActivityFormModal: React.FC<{
   activity: Activity | null;
   onSave: (act: Activity) => void;
@@ -152,7 +149,6 @@ const ActivityFormModal: React.FC<{
   );
 };
 
-// 📇 Componente para cada Atividade na Lista (Omitido por brevidade, pois não foi alterado)
 const ProfessorActivityCard: React.FC<{ 
   activity: Activity, 
   onEdit: (act: Activity) => void, 
@@ -176,7 +172,6 @@ const ProfessorActivityCard: React.FC<{
           </p>
         </div>
         
-        {/* Botões de Ação */}
         <div className='flex space-x-2 text-gray-500 ml-4 pt-1'>
           <button 
             onClick={() => onEdit(activity)}
@@ -201,7 +196,6 @@ const ProfessorActivityCard: React.FC<{
   );
 };
 
-// 📜 Componente Principal da Listagem de Atividades (Professor) (Omitido por brevidade, pois não foi alterado)
 const ProfessorActivitiesPanel: React.FC<any> = ({ 
   activities, 
   handleDeleteActivity, 
@@ -246,7 +240,6 @@ const ProfessorActivitiesPanel: React.FC<any> = ({
 };
 
 
-// 💻 Componente Principal da Aplicação
 export default function PaginaAtividadesCompleta() {
   const [menuAberto, setMenuAberto] = useState(false);
   const [activities, setActivities] = useState<Activity[]>(initialActivities);
@@ -279,7 +272,6 @@ export default function PaginaAtividadesCompleta() {
   return (
     <div className="min-h-screen bg-gray-50 relative font-sans text-gray-900">
       
-      {/* 🔝 Cabeçalho (Mantido) */}
       <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
           <div className="flex items-center gap-4">
@@ -315,7 +307,6 @@ export default function PaginaAtividadesCompleta() {
         </div>
       </header>
 
-      {/* ☰ Overlay (Mantido) */}
       <div 
         className={cn(
           "fixed inset-0 bg-black/50 z-40 transition-opacity duration-300",
@@ -324,7 +315,6 @@ export default function PaginaAtividadesCompleta() {
         onClick={() => setMenuAberto(false)}
       />
 
-      {/* Sidebar (Corrigida: Atividades agora está ativo) */}
       <aside 
         className={cn(
           "fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col",
@@ -333,7 +323,6 @@ export default function PaginaAtividadesCompleta() {
       >
         <div className="p-6 flex flex-col h-full">
           
-          {/* Campo de Pesquisa e Botão de Fechar */}
             <div className="flex items-center gap-3 mb-8">
             <div className="relative flex-1">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -356,9 +345,7 @@ export default function PaginaAtividadesCompleta() {
           </div>
           <hr className="border-gray-200 mb-6" />
           
-          {/* Links de Navegação */}
           <nav className="space-y-4 flex-1">
-            {/* CORRIGIDO: Este link agora é o ativo/selecionado */}
             <Link href="/professor/atividades" className="flex items-center gap-4 px-2 py-2 text-[#5B3A9A] bg-purple-50 rounded-md transition-colors group">
               <BookOpen className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Atividades</span>
@@ -373,19 +360,12 @@ export default function PaginaAtividadesCompleta() {
               <span className="font-medium">Horários</span>
             </Link>
             
-            {/* CORRIGIDO: Este link agora é um link normal, sem o destaque de ativo */}
             <Link href="/professor/dashboard" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
               <Users className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Turmas</span>
             </Link>
-            
-            <Link href="/professor/boletim" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
-              <FileText className="w-6 h-6 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">Boletim</span>
-            </Link>
           </nav>
 
-          {/* Rodapé da Sidebar (Sair e Contato) */}
           <div className="mt-auto space-y-4">
             <Link href="/" className="flex items-center gap-4 px-2 py-2 text-gray-800 hover:text-red-600 transition-colors font-bold uppercase tracking-wide">
               <LogOut className="w-6 h-6 transform rotate-180" />
@@ -400,7 +380,6 @@ export default function PaginaAtividadesCompleta() {
         </div>
       </aside>
       
-      {/* Conteúdo Principal */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ProfessorActivitiesPanel 
           activities={activities}
@@ -410,7 +389,6 @@ export default function PaginaAtividadesCompleta() {
         />
       </main>
 
-      {/* 📝 Modal (Criação/Edição) */}
       {(isCreating || activityToEdit) && (
         <ActivityFormModal 
           isNew={isCreating}

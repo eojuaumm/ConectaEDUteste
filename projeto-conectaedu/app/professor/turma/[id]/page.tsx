@@ -199,10 +199,6 @@ export default function DetalhesTurmaPage() {
               <LayoutDashboard className="w-6 h-6 group-hover:scale-110 transition-transform" />
               <span className="font-medium">Turmas</span>
             </a>
-            <a href="/professor/boletim" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
-              <FileText className="w-6 h-6 group-hover:scale-110 transition-transform" />
-              <span className="font-medium">Boletim</span>
-            </a>
           </nav>
           <div className="mt-auto space-y-4">
             <a href="/" className="flex items-center gap-4 px-2 py-2 text-gray-800 hover:text-red-600 transition-colors font-bold uppercase tracking-wide">
