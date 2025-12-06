@@ -83,7 +83,7 @@ export default function DetalhesTurmaPage() {
       desc: "Ver dados e fichas dos estudantes.", 
       icon: Users, 
       cor: "bg-teal-500",
-      href: "#" 
+      href: `/professor/turma/${turmaIdRaw}/listadealunos`
     },
     { 
       titulo: "Ocorrências", 
