@@ -69,7 +69,7 @@ export default function DetalhesTurmaPage() {
       desc: "Registrar faltas e presenças hoje.", 
       icon: ClipboardCheck, 
       cor: "bg-blue-500",
-      href: "#"
+      href: `/professor/turma/${turmaIdRaw}/chamada`
     },
     { 
       titulo: "Lançar Notas", 
