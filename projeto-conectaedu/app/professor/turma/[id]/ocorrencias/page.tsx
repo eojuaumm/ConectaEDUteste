@@ -205,7 +205,6 @@ export default function OcorrenciasPage() {
             </div>
         </div>
 
-        {/* LISTA */}
         <div className="space-y-4">
             {ocorrenciasFiltradas.length === 0 ? (
                 <div className="text-center py-12 text-gray-500">
@@ -215,7 +214,7 @@ export default function OcorrenciasPage() {
                 ocorrenciasFiltradas.map((ocorrencia) => (
                     <div key={ocorrencia.id} className={cn(
                         "bg-white rounded-xl shadow-sm border border-gray-200 p-5 transition-all hover:shadow-md",
-                        ocorrencia.resolvido && "opacity-75 bg-gray-50"
+                        ocorrencia.resolvido ? "opacity-75 bg-gray-50" : null
                     )}>
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-3">
                             <div className="flex items-center gap-3">
