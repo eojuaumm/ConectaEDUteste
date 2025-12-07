@@ -10,39 +10,33 @@ export const metadata: Metadata = {
 const criadores = [
   {
     nome: 'Clara',
-    funcao: '{função}',
-    descricao: '',
-    imagem: '/images/logoconectaedureso.png' 
+    funcao: 'Analista de Sistemas',
+    imagem: '/images/clarafoto.jpeg' 
   },
   {
     nome: 'Linaldo',
     funcao: 'Programador Front-End',
-    descricao: '',
-    imagem: '/images/logoconectaedureso.png'
+    imagem: '/images/linasfoto.jpeg'
   },
   {
     nome: 'Cauan',
-    funcao: '{função}',
-    descricao: '',
-    imagem: '/images/logoconectaedureso.png'
+    funcao: 'Analista de Sistemas',
+    imagem: '/images/cauanfoto.jpeg'
   },
   {
     nome: 'João Victor',
     funcao: 'Desenvolvedor FullStack',
-    descricao: '',
-    imagem: '/images/logoconectaedureso.png'
+    imagem: '/images/juaumlindofoto.jpeg'
   },
   {
     nome: 'Isabele',
     funcao: 'UI/UX Designer',
-    descricao: '',
-    imagem: '/images/logoconectaedureso.png'
+    imagem: '/images/isafoto.jpeg'
   },
   {
     nome: 'Gustavo',
     funcao: 'Programador Front-End',
-    descricao: '',
-    imagem: '/images/logoconectaedureso.png'
+    imagem: '/images/gugafoto.jpeg'
   },
 ];
 
