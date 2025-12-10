@@ -5,15 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { 
-  Menu, 
-  User, 
-  LogOut, 
-  Search, 
   BookOpen, 
-  Calendar, 
-  LayoutDashboard, 
-  FileText, 
-  Phone, 
   Clock, 
   ChevronLeft,
   Users,
@@ -119,7 +111,9 @@ export default function DetalhesTurmaPage() {
               className="p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none transition-colors"
               aria-label="Abrir menu"
             >
-              <Menu className="w-6 h-6" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
             </button>
             
             <div className="flex items-center gap-2">
@@ -140,7 +134,9 @@ export default function DetalhesTurmaPage() {
               <p className="text-xs text-gray-500">Logado</p>
             </div>
             <button className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-[#5B3A9A] hover:ring-2 hover:ring-[#5B3A9A] transition-all">
-              <User className="w-5 h-5" />
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
             </button>
           </div>
         </div>
@@ -164,7 +160,9 @@ export default function DetalhesTurmaPage() {
            <div className="flex items-center gap-3 mb-8">
             <div className="relative flex-1">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
+                <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
               </div>
               <input
                 type="text"
@@ -184,30 +182,42 @@ export default function DetalhesTurmaPage() {
           <hr className="border-gray-200 mb-6" />
           <nav className="space-y-4 flex-1">
             <a href="/professor/atividades" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
-              <BookOpen className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+              </svg>
               <span className="font-medium">Atividades</span>
             </a>
             <a href="/professor/muraldeavisos" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
-              <Calendar className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+              </svg>
               <span className="font-medium">Mural de avisos</span>
             </a>
             <a href="/professor/horarios" className="flex items-center gap-4 px-2 py-2 text-gray-700 hover:text-[#5B3A9A] transition-colors group">
-              <Clock className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               <span className="font-medium">Horários</span>
             </a>
             <a href="/professor/dashboard" className="flex items-center gap-4 px-2 py-2 text-[#5B3A9A] bg-purple-50 rounded-md transition-colors group">
-              <LayoutDashboard className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
               <span className="font-medium">Turmas</span>
             </a>
           </nav>
           <div className="mt-auto space-y-4">
-            <a href="/" className="flex items-center gap-4 px-2 py-2 text-gray-800 hover:text-red-600 transition-colors font-bold uppercase tracking-wide">
-              <LogOut className="w-6 h-6 transform rotate-180" />
+            <Link href="/" className="flex items-center gap-4 px-2 py-2 text-gray-800 hover:text-red-600 transition-colors font-bold uppercase tracking-wide">
+              <svg className="w-6 h-6 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+              </svg>
               SAIR
-            </a>
+            </Link>
             <hr className="border-gray-300" />
             <div className="flex items-center gap-3 px-2 py-2 text-gray-700">
-              <Phone className="w-5 h-5" />
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
               <span className="text-sm font-medium">Contato - (99) 99999-9999</span>
             </div>
           </div>
@@ -280,11 +290,11 @@ export default function DetalhesTurmaPage() {
                 </h3>
                 <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0"></div>
                         <span>Entregar notas do 1º Bimestre até sexta-feira.</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#40C0B4] mt-2 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#40C0B4] mt-2 shrink-0"></div>
                         <span>Reunião de pais agendada para o dia 25.</span>
                     </li>
                 </ul>
