@@ -76,7 +76,7 @@ export default function DetalhesTurmaPage() {
       desc: "Gerenciar avaliações e resultados.", 
       icon: GraduationCap, 
       cor: "bg-purple-500",
-      href: "#"
+      href: `/professor/turma/${turmaIdRaw}/lancarnotas`
     },
     { 
       titulo: "Lista de Alunos", 
