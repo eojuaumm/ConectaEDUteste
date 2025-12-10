@@ -97,7 +97,7 @@ export default function DetalhesTurmaPage() {
       desc: "Organizar conteúdo programático.", 
       icon: BookOpen, 
       cor: "bg-pink-500",
-      href: "#" 
+      href: `/professor/turma/${turmaIdRaw}/planodeaulas`
     },
     { 
       titulo: "Relatórios", 
